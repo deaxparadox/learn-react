@@ -9,3 +9,14 @@ services:
     container_name: react-quick-start
     volumes:
       - ./quick-start:/react/app
+
+  tictactoe:
+    build:
+      context: ./tic-tac-toe
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    command: ["npm", "start", "0.0.0.0:3000"]
+    container_name: react-tic-tac-toe
+    volumes:
+      - ./tic-tac-toe:/react/app
